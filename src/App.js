@@ -11,11 +11,11 @@ import React from "react";
 
 // Variables____________________________________________________________________________
 
-const operationRegex = /[/\*-+]/g;
+const operationRegex = /[\/\*\-\+]/g;
 const numRegex = /\d/g;
 const decimalRegex = /\./g;
 const expressionRegex = /\d+/g;
-const runningExpressionRegex = /^[/\*-+]/;
+const runningExpressionRegex = /^[\/\*\-\+]/;
 let inputExpression = "";
 let isRunningExpression = false;
 
