@@ -1,0 +1,173 @@
+
+@use './style-dependencies/Mixins' as *;
+@use './style-dependencies/Variables' as v;
+
+@font-face {
+    font-family: Calculator;
+    src: url(./fonts/Calculator.ttf) format("truetype"), url(./fonts/calculator-webfont.woff) format("woff");
+  }
+
+:root {
+    --hue: 184;
+    font-size: calc(16px - ((2000px - 100vw) / 400));
+}
+
+body {
+    @include flex(column, center, center);
+    background: linear-gradient(45deg, white, v.$primary-color);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    @include flex(column, center, center);
+    background-color: v.$secondary-color;
+    width: 40vw;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem rgba($color: #000000, $alpha: .4);
+}
+
+h1 {
+    @include text-styles(2rem, 700);
+    color: white;
+}
+
+.calculator-body {
+    @include flex(column, center, center);
+}
+
+.output-container {
+    @include flex(column, center, center);
+}
+
+.display {
+    background-color: white;
+    border-radius: .5rem;
+    height: 3rem;
+    padding: 0 1rem 0 1rem;
+    width: 25vw;
+    min-width: 11ch;
+    margin: 0;
+    box-shadow: inset .2rem .2rem .2rem rgba($color: #000000, $alpha: .4);
+    @include text-styles(2.5rem, 100);
+    @include flex(row, center, flex-start);
+    font-family: calculator, Arial, Helvetica, sans-serif;
+}
+
+.display-label {
+    @include text-styles(1rem, 100);
+    margin: .5rem 0 .5rem 0;
+    padding: 0;
+    color: white;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#add {
+    grid-area: add;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+.numpad-container {
+    display: grid;
+    @include grid(4, 1fr);
+    grid-template-areas: 
+        "clear divide multiply subtract"
+        "seven eight nine add"
+        "four five six add"
+        "one two three equals"
+        "zero zero decimal equals";
+    height: 40vh;
+    width: 30vw;
+}
+
+.button {
+    background-color: v.$primary-color;
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem .2rem rgba($color: #000000, $alpha: .4);
+    margin: .5rem;
+    @include flex(column, center, center);
+    @include text-styles(2rem, 900);
+    transition: all 200ms ease;
+    &:hover {
+        background-color: v.$hover-color;
+        transform: translateY(-.2rem);
+    }
+    &:active {
+        background-color: v.$tertiary-color;
+        transform: translateY(.1rem);
+    }
+}
+
+.footer-text {
+    @include text-styles(1rem, 100);
+    color: white;
+}
+
+
+// body {
+//     background-color: black;
+//     color: white;
+// }
