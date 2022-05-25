@@ -2,18 +2,11 @@ React Calculator
 ================
 Introduction
 --------------
-This app is a calculator that you can use your own keyboard or the integrated keyboard with. You can also try the "rave mode", where the colors of the app change with the numbers you type in!
+This app is a simple calculator that can handle expressions of up to 10 characters/numbers in length.
 
 Usage
 -----------
-Use your own integrated keyboard, or the provided keypad for input. Here are the key bindings:
-
-    -Keypad: 0-9  Keyboard: 0-9
-    -Keypad: x  Keyboard: *
-    -Keypad: ÷  Keyboard: /
-    -Keypad: +  Keyboard: +
-    -Keypad: -  Keyboard: -
-    -Keypad: =  Keyboard: "Enter" / "Return"
+Use the buttons of the provided keypad for input. Upon pressing the "=" button, the answer of the epxression will be displayed in the top-most field.
 
 License
 ----------
